@@ -9,10 +9,9 @@ app = Flask(  # Create a flask app
 )
 
 # Variables for tasks
-image_link = "https://uploads-ssl.webflow.com/5dd64bd3a930f9d04abd1363/5de254f85f1762feee30d664_meet_logo_red.png"
-
+image_link = "https://static.vecteezy.com/system/resources/previews/009/273/280/original/concept-of-loneliness-and-disappointment-in-love-sad-man-sitting-element-of-the-picture-is-decorated-by-nasa-free-photo.jpg"
 user_bio = "Middle East Entrepreneurs of Tomorrow. Enabling the next generation of Israeli and Palestinian leaders."
-
+aboutMe = "i am a very smart meet student"
 posts = {
     "https://imageio.forbes.com/blogs-images/samarmarwan/files/2018/03/MEET-Students-1200x800.jpg": "Group projects <3",
     "https://uploads-ssl.webflow.com/5dd64bd3a930f96c82bd137a/63024ce64d943673cb004a4c_2022.07.17%20-%20Summer%20Day%201.png": "MEET summer!",
@@ -26,12 +25,12 @@ posts = {
 @app.route('/')  # '/' for the default page
 def home():
     return render_template('index.html', user_bio = user_bio,
-     image_link=image_link)
+     image_link=image_link,posts=posts)
 
 
 @app.route('/about')  # '/' for the default page
 def about():
-    return render_template('about.html')
+    return render_template('about.html', aboutMe=aboutMe)
 
 
 if __name__ == "__main__":  # Makes sure this is the main process
